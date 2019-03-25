@@ -43,6 +43,7 @@
     let languagesTemplate = new EJS({url: 'languages.ejs'});
 
     $("#people-appender").html(peopleTemplate.render({people: dataSet.people}));
+
     $("#languages-appender").html(languagesTemplate.render({languages: dataSet.languages}));
 
 </script>
