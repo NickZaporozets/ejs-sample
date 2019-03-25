@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EJS Sample</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body>
+
+<main class="container">
+    <h1>EJS Sample</h1>
+    <section class="row">
+        <section class="col-md-6" id="people-appender"></section>
+        <section class="col-md-6" id="languages-appender"></section>
+    </section>
+</main>
+
+<script src="jquery-2.1.1.js"></script>
+<script src="ejs_production.js"></script>
+
+<script>
+
+    const dataSet = {
+        people: [
+            {
+                name: "John",
+                surname: "Doe"
+            },
+            {
+                name: "Foo",
+                surname: "Bar"
+            }
+        ],
+        languages: [
+            "JS",
+            "HTML",
+            "CSS",
+            "Magic"
+        ]
+    };
+
+    let peopleTemplate = new EJS({url: 'people.ejs'});
+    let languagesTemplate = new EJS({url: 'languages.ejs'});
+
+    $("#people-appender").html(peopleTemplate.render({people: dataSet.people}));
+    $("#languages-appender").html(languagesTemplate.render({languages: dataSet.languages}));
+
+</script>
+</body>
+</html>

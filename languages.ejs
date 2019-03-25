@@ -1,0 +1,11 @@
+<ul class="list-group alert-warning">
+    <%
+    var classes = ["success", "warning", "danger", "primary"];
+    var iterator = 0;
+    languages.forEach(function (language) { %>
+        <li class="list-group-item list-group-item-<%= classes[iterator] %>"><%= language %></li>
+    <%
+        iterator++;
+    });
+    %>
+</ul>
